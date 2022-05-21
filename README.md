@@ -1,6 +1,5 @@
 # Advanced Lane Finding
-<!--![lanes](https://user-images.githubusercontent.com/54400665/169360765-1d5e332f-7e17-4ff1-8bc1-312e86c31fd6.gif) -->
-<img src = "https://user-images.githubusercontent.com/54400665/169360765-1d5e332f-7e17-4ff1-8bc1-312e86c31fd6.gif" width="480px">
+![lanes](lane.gif)
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
