@@ -113,33 +113,6 @@ where mx and my corresponds to the ratio of pixels to meter in the x and y direc
 
 The distance that the car is away from the center of the lane is calculated by subtracting the center of the two lanes from the center of the image. The result is in unit pixels so we then multiply by the mx ratio mentioned above
 
-
-## Results & Video Pipeline:
-
-![final_result_demo](img/final_result_demo.gif)
-
-**Please refer to [project_video_output](project_video_output.mp4) for the full video output**  
-
-NOTE: Considering my concrete schedule, I haven't explored or given the "challenge_video" and "harder_challenge_video" a try. I'd greatly appreciate an opportunity to learn about the necessary 'functions' and 'hyperparameter tuning' to reduce the distortion and obtain an optimal solution for the challenge videos.  
-
-## Discussion
-
-- Both lane detection and vehicle detection depend on neural network models trained on 14 example images. These models are unlikely to work on roads with different lane appearances, or even on different car models. This could be fixed just by collecting images on which the models performed poorly, adding labels, and including these new images in the training set.
-
-- The search algorithm for lane lines in this project assumes that the car is fairly close to the center of the lanes. That search algorithm would need to be modified to find lane lines in arbitrary positions with respect to the car.
-
-- The perspective transformation assumes that the road is flat. That algorithm would not be useable on hills.
-
-- There were some issues around the tree shadow which caused the algorithm to fail, so it appears the smart lane finding method was not working as inteded. Calculating and utilizing a moving average of the lane slope may be a good idea so that we can extrapolating from previous N frames rather than just the last one.
-
-## Potential Improvements
-
-- Other ways to improve the model include more dynamic thresholding, perhaps considering separate threshold parameters for different horizontal slices of the image, or dynamically selecting threshold parameters based on the resulting number of activated pixels, designating a confidence level for fits and rejecting new fits that deviate beyond a certain amount, or rejecting the right fit (for example) if the confidence in the left fit is high and right fit deviates too much (enforcing roughly parallel fits).
-
-- A few placed involved hardcoding parameters (warp perspective, binary thresholding coefficients), these could be automated by using some form of optimizer based on the imput camera angles etc. Automating the binary threshold coefficients would lead to a much more robust lane finding algorithm in all terrains (snow, rain, etc.). Lastly, the smart line detection algorithm could use frames past the previous one to better extrapolate values for the current frame.
-
-## References & Acknowledgement:
+## References :
 - [Demo video](https://www.youtube.com/watch?v=vWY8YUayf9Q&feature=youtu.be) with Q&A session by David Silver, Head of Self-Driving Cars at Udacity.  
-- Course material & Quizzes from the "Advanced Lane Finding" part of this nanodegree.  
-- Other relevant sources: (OpenCV Python Tutorial)[], Bogposts from [Medium](http://medium.com/), [OpenCV Tutorials](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html).  
-- Stackoverflow and Stackexchange: The expert community groups and channels under [Stack Overflow](https://stackoverflow.com/) and [Stack Exchange](https://stackexchange.com/) has greatly helped me with optimal use of functions and debugging the code.  
+
